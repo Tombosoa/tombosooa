@@ -1,5 +1,5 @@
-import { UserEdit } from './UserEdit';
-import { UserList } from './UserList';
+import { UserEdit } from "./UserEdit";
+import { UserList } from "./UserList";
 
 const users = {
   list: <UserList />,

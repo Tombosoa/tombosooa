@@ -9,21 +9,25 @@ import { FloatingNav } from "@/components/ui/floating-navbar";
 const links = [
   {
     name: "Home",
-    link: "string"
-   },{
+    link: "string",
+  },
+  {
     name: "About",
-    link: "string1"
-   },{
+    link: "string1",
+  },
+  {
     name: "Formation",
-    link: "string4"
-   },{
+    link: "string4",
+  },
+  {
     name: "Projects",
-    link: "string2"
-   },{
+    link: "string2",
+  },
+  {
     name: "Contact",
-    link: "string3"
-   },
-]
+    link: "string3",
+  },
+];
 
 export default function RootLayout({
   children,

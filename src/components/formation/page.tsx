@@ -1,7 +1,3 @@
-export default function Formation(){
-    return(
-        <div className="bg-white h-[40vh] my-[2rem]" >
-            Formation
-        </div>
-    )
+export default function Formation() {
+  return <div className="my-[2rem] h-[40vh] bg-white">Formation</div>;
 }

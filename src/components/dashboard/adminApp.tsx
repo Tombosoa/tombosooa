@@ -9,13 +9,14 @@ import dataProvider from "@/providers/dataProvider";
 export default function AdminApp() {
   return (
     <Admin
-        title="Portfolio" 
-        authProvider={authProvider}
-        dataProvider={dataProvider}
-        loginPage={Login} 
-        requireAuth>
-            <Resource name="trosa"></Resource>
-            <Resource name="users" {...users}/>
+      title="Portfolio"
+      authProvider={authProvider}
+      dataProvider={dataProvider}
+      loginPage={Login}
+      requireAuth
+    >
+      <Resource name="trosa"></Resource>
+      <Resource name="users" {...users} />
     </Admin>
   );
 }

@@ -1,18 +1,13 @@
 import { FlipWords } from "../ui/flip-words";
 
-const words = [
-  "web developer",
-  "programmer",
-];
+const words = ["web developer", "programmer"];
 
 export default function Head() {
   return (
     <div className="m-[2rem] flex flex-col">
-      <p className="text-white text-[2rem]">
-        Hi there! I'm a
-      </p>
+      <p className="text-[2rem] text-white">Hi there! I am a</p>
       {/* Vérifiez que `FlipWords` accepte bien `className` et `words` */}
-      <FlipWords className="text-[3.5rem] ml-[3rem]" words={words} />
+      <FlipWords className="ml-[3rem] text-[3.5rem]" words={words} />
     </div>
   );
 }

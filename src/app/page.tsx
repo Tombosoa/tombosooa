@@ -33,29 +33,17 @@ const products: Product[] = [
   { title: "string9", link: "string9", thumbnail: "/img/img4.jpg" },
 ];
 
-export function ItChild() {
-  return (
-    <>
-      <Head />
-      <About />
-      <Formation />
-      <Projects />
-      <Contact />
-      <Footer />
-      {/* Si `HeroParallax` est correctement défini, décommentez cette ligne. */}
-      {/* <HeroParallax products={products} /> */}
-    </>
-  );
-}
-
-export function BBody() {
-  return <TracingBeam><ItChild /></TracingBeam>;
-}
-
 export default function Home() {
   return (
     <AuroraBackground className="outline-hidden">
-      <BBody />
+      <TracingBeam>
+        <Head />
+        <About />
+        <Formation />
+        <Projects />
+        <Contact />
+        <Footer />
+      </TracingBeam>
     </AuroraBackground>
   );
 }
