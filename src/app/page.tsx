@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { AuroraBackground } from "@/components/ui/aurora-background";
-import { HeroParallax } from "@/components/ui/hero-parallax";
-import { TracingBeam } from "@/components/ui/tracing-beam";
+import { HeroParallax } from "@/components/ui/hero-parallax"; // Vérifiez si ce composant est bien défini
+import { TracingBeam } from "@/components/ui/tracing-beam"; // Vérifiez si ce composant est bien défini
 import Head from "@/components/head/head";
 import About from "@/components/about/about";
 import Footer from "@/components/footer/footer";
@@ -14,45 +14,24 @@ export const metadata: Metadata = {
   description: "This is my personal portfolio",
 };
 
-const products = [
-   {
-    title: "string1",
-    link: "string1",
-    thumbnail: "/img/img1.jpg"
-},{
-  title: "string2",
-  link: "string2",
-  thumbnail: "/img/img2.jpg"
-},{
-  title: "string3",
-  link: "string3",
-  thumbnail: "/img/img3.jpg"
-},{
-  title: "string4",
-  link: "string4",
-  thumbnail: "/img/img4.jpg"
-},{
-  title: "string5",
-  link: "string5",
-  thumbnail: "/img/img5.jpg"
-},{
-  title: "string6",
-  link: "string6",
-  thumbnail: "/img/img1.jpg"
-},{
-  title: "string7",
-  link: "string7",
-  thumbnail: "/img/img2.jpg"
-},{
-  title: "string8",
-  link: "string8",
-  thumbnail: "/img/img3.jpg"
-},{
-  title: "string9",
-  link: "string9",
-  thumbnail: "/img/img4.jpg"
-},
-]
+// Si vous utilisez TypeScript, ajoutez un type pour les produits.
+type Product = {
+  title: string;
+  link: string;
+  thumbnail: string;
+};
+
+const products: Product[] = [
+  { title: "string1", link: "string1", thumbnail: "/img/img1.jpg" },
+  { title: "string2", link: "string2", thumbnail: "/img/img2.jpg" },
+  { title: "string3", link: "string3", thumbnail: "/img/img3.jpg" },
+  { title: "string4", link: "string4", thumbnail: "/img/img4.jpg" },
+  { title: "string5", link: "string5", thumbnail: "/img/img5.jpg" },
+  { title: "string6", link: "string6", thumbnail: "/img/img1.jpg" },
+  { title: "string7", link: "string7", thumbnail: "/img/img2.jpg" },
+  { title: "string8", link: "string8", thumbnail: "/img/img3.jpg" },
+  { title: "string9", link: "string9", thumbnail: "/img/img4.jpg" },
+];
 
 export function ItChild() {
   return (
@@ -63,19 +42,20 @@ export function ItChild() {
       <Projects />
       <Contact />
       <Footer />
- {/*     <HeroParallax products={products} />
-*/}    </>
-  )
+      {/* Si `HeroParallax` est correctement défini, décommentez cette ligne. */}
+      {/* <HeroParallax products={products} /> */}
+    </>
+  );
 }
 
-export function BBody(){
-  return(
-    <TracingBeam children={<ItChild/>} />
-  )
+export function BBody() {
+  return <TracingBeam><ItChild /></TracingBeam>;
 }
 
 export default function Home() {
   return (
-    <AuroraBackground className=" outline-hidden" children={<BBody/>} />
+    <AuroraBackground className="outline-hidden">
+      <BBody />
+    </AuroraBackground>
   );
 }
