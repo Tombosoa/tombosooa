@@ -1,0 +1,19 @@
+import { authTokenCache } from "./cache";
+import { Configuration } from "@/gen-ts";
+import {type ClassValue, clsx} from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+  }
+  
+  export function getCachedConfiguration(): Configuration {
+    const token = authTokenCache.get();
+    const configuration = new Configuration();
+    configuration.accessToken = token?.token ?? '';
+    return configuration;
+  }
+  
+  export const validateString = (value: unknown, maxLength: number) => {
+    return !(!value || typeof value !== 'string' || value.length > maxLength);
+  };
